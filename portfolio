@@ -1,1 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya Jain's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
 
+        header {
+            background-color: #35455d;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: #2c3e50;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #35455d;
+            transition: border-color 0.3s ease;
+        }
+
+        .profile-img:hover {
+            border-color: #ffdd00;
+        }
+
+        h1, h2, h3 {
+            color: #35455d;
+            padding: 20px 0;
+            transition: color 0.3s ease;
+        }
+
+        h2 {
+            border-bottom: 2px solid #35455d;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        a {
+            color: #35455d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffdd00;
+        }
+
+        a.email {
+            color: #ffdd00;
+        }
+
+        a.button-link {
+            display: inline-block;
+            background-color: #ffdd00;
+            color: #35455d;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #35455d;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        a.button-link:hover {
+            background-color: #35455d;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        footer {
+            background-color: #35455d;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffdd00;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #35455d;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                transition: max-height 0.3s ease;
+            }
+
+            nav a {
+                margin: 10px 0;
+                color: #ffffff;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                margin-top: 10px;
+                font-size: 20px;
+                color: #ffffff;
+                background-color: #35455d;
+                padding: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            .menu-toggle:hover {
+                background-color: #2c3e50;
+            }
+        }
+
+        section {
+            padding-top: 70px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Tanya Jain</h1>
+        <p>VIT Bhopal University</p>
+        <p>Email: <a href="mailto:tanyajain2022@vitbhopal.ac.in" class="email">tanyajain2022@vitbhopal.ac.in</a> | 
+            <a href="mailto:www.tanyajain555@gmail.com" class="email">www.tanyajain555@gmail.com</a> | Mobile: 7840057787</p>
+        <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+        <nav>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#languages">Languages</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#profiles">Profiles</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="https://media.licdn.com/dms/image/D4D03AQGrkNqFgST7Vw/profile-displayphoto-shrink_800_800/0/1665380423661?e=1728518400&v=beta&t=WfQppfP0MvnVTBHgBtxB-MykZOxuYWqr6BZqJuWCApI" alt="Tanya Jain" class="profile-img">
+
+        <section id="education">
+            <h2>Educational Qualifications</h2>
+            <ul>
+                <li><strong>High School:</strong> St. John's Academy, CBSE, 2020, 96.6%</li>
+                <li><strong>Higher Secondary:</strong> DAV Public School Sreshtha Vihar, CBSE, 2022, 89%</li>
+                <li><strong>Undergraduation:</strong> VIT Bhopal University, Current CGPA: 8.19</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>MySQL</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>Blockchain</li>
+                <li>Web Development</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <p>Fresher</p>
+        </section>
+
+        <section id="languages">
+            <h2>Languages Spoken</h2>
+            <ul>
+                <li>English</li>
+                <li>Hindi</li>
+            </ul>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Writing</li>
+                <li>Reading</li>
+                <li>Swimming</li>
+                <li>Basketball</li>
+                <li>Dancing</li>
+            </ul>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Won many awards for essay writing, greeting card making, and dancing in intra-school competitions</li>
+                <li>Secured second position in Hindi Debate Competition in zonal level</li>
+                <li>Successfully created a Python project for CBSE practical: <a href="https://github.com/semes23/LOGIN-CS-PROECT-" class="button-link" target="_blank">Python Project</a></li>
+            </ul>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1A6Y6dNu1FyW-efsJ2ou0v1HB3us9qEJt/view?usp=sharing" class="button-link" target="_blank">Hackathon: Innovate NSUT</a></li>
+                <li><a href="https://drive.google.com/file/d/1Gt7KBPnBForc3ZETDqQYx9SihWQmkZBW/view?usp=sharing" class="button-link" target="_blank">User Experience</a></li>
+            </ul>
+        </section>
+
+        <section id="profiles">
+            <h2>Online Profiles</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/tanya-jain-6381b71b5" class="button-link" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s" alt="LinkedIn" class="social-icon"> LinkedIn Profile</a></li>
+                <li><a href="https://github.com/semes23" class="button-link" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s" alt="GitHub" class="social-icon"> GitHub Profile</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tanya Jain</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu visibility
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Smooth scrolling with header offset
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const headerOffset = document.querySelector('header').offsetHeight; // Use header's height for offset
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // Change header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
